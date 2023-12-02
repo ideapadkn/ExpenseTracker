@@ -61,13 +61,13 @@ const handleTransactionSubmmitted = (transactionData) => {
 
 // Delete transaction
 const handleTransactionDeleted = (id) => {
-  transactions.value = transactions.value.filter((transaction) => {
-    transaction.id = !id
-  })
+  transactions.value = transactions.value.filter(
+    (transaction) => transaction.id !== id
+  )
 
   savedTransactionsToLocalStorage()
 
-  toast.success('Transaction deleted!')
+  toast.success('Transaction deleted.')
 }
 
 // Save to localStorage
